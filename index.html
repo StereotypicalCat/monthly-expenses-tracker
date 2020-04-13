@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css"
+        integrity="sha256-1nEaE91OpXJD7M6W5uSiqxhdmrY+lOOTHC1iUxU9Pds=" crossorigin="anonymous">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+  your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<button onclick="scrollToTopOrBottom()" id="myBtn" class="button">Bottom</button>
+
+<div class="columns is-mobile">
+  <div class="column is-8 is-offset-2">
+    <table class="table is-fullwidth is-bordered is-striped">
+      <thead>
+      <tr>
+        <th>Subscription Title</th>
+        <th>Price</th>
+        <th>Currency</th>
+        <th>In DKK</th>
+        <th>% of Whole</th>
+        <th>Info</th>
+        <th>Delete</th>
+        <th>Options</th>
+      </tr>
+      </thead>
+      <tbody class="tbody">
+      </tbody>
+      <tfoot>
+      <tr>
+        <th id="amountOfSubscriptions"></th>
+        <th></th>
+        <th></th>
+        <th id="total"></th>
+        <th>100%</th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+      </tr>
+      </tfoot>
+    </table>
+
+    <div class="centered-div" >
+      <button class="button" onclick="newSubscription()">New Subscription</button>
+      <button class="button" onclick="saveToFile()">Save</button>
+
+
+      <div class="file">
+      <div class="makeshifButton">
+        <label class="file-label">
+          <input class="file-input" id='fileinput' type="file" name="resume" onchange='load();'>
+          <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Load
+      </span>
+    </span>
+        </label>
+      </div>
+      </div>
+      <button class="button" onclick="addCurrency()">Add Currency</button>
+      <button class="button" onclick="Sort()">Sort</button>
+      <button class="button" onclick="PieChart()">PieChart</button>
+      <button class="button" onclick="Reset()">Reset</button>
+    </div>
+
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
