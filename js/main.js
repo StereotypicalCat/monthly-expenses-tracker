@@ -162,7 +162,7 @@ let addCurrency = () => {
             };
             // Check that the rate is a number
             if (isNaN(newCurrency.rate)) {
-                alert("DKK exchange rate is now a number");
+                alert("DKK exchange rate is not a number");
                 return;
             }
             // Update with the new currency, and refresh the table
@@ -208,7 +208,10 @@ let updateTable = () => {
 // Populate a tbody with subscriptions from the subscriptions array.
 let populateTable = (tbody) => {
     // Store the total cost of all subscriptions
-    let total = subscriptions.map((s) => s.monthly).reduce((acc, sub) => acc + sub);
+    if (subscriptions.length <= 0) {
+        return;
+    }
+    let total = subscriptions.map((s) => s.indkk).reduce((acc, sub) => acc + sub);
     // Update tablefoot with total monthly cost and amount of subscriptions.
     document.querySelector('#total').innerHTML = total.toFixed(2);
     document.querySelector('#amountOfSubscriptions').innerHTML = subscriptions.length.toString();
