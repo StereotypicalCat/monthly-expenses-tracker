@@ -33,4 +33,4 @@ jobs:
         uses: docker/build-push-action@v2.2.2
         with:
           push: true
-          tags: lucasw89/portfolio:latest
+          tags: lucasw89/monthly-budget:latest
